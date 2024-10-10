@@ -1,5 +1,5 @@
 
-module.exports = async (apiis. m, store) => {
+module.exports = async (apiis, m, store) => {
 try {
 const path = require('path');
 const from = m.key.remoteJid
@@ -516,7 +516,7 @@ const reply = (teks) => {
 { quoted: m })
         }
 
-const fkontak = { key: {fromMe: false,participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { 'contactMessage': { 'displayName': `${pushname}`, 'vcard': `BEGIN:VCARD\nVERSION:3.0\nN:XL;Vinzx,;;;\nFN:${pushname},\nitem1.TEL;waid=${sender.split('@')[0]}:${sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`, 'jpegThumbnail': { url: 'https://pomf2.lain.la/f/zlefande.jpg'' }}}}
+const fkontak = { key: {fromMe: false,participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { 'contactMessage': { 'displayName': `${pushname}`, 'vcard': `BEGIN:VCARD\nVERSION:3.0\nN:XL;Vinzx,;;;\nFN:${pushname},\nitem1.TEL;waid=${sender.split('@')[0]}:${sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`, 'jpegThumbnail': { url: 'https://pomf2.lain.la/f/zlefande.jpg' }}}}
 function parseMention(text = '') {
 return [...text.matchAll(/@([0-9]{5,16}|0)/g)].map(v => v[1] + '@s.whatsapp.net')
 }
@@ -583,7 +583,7 @@ id: '.groupmenu'
 }]
 },
 {
-highlight_label: 'Owners Menu:,
+highlight_label: 'Owners Menu',
 rows: [{
 title: 'Owners Fiturs', 
 id: '.ownermenu'
@@ -795,7 +795,7 @@ id: '.groupmenu'
 }]
 },
 {
-highlight_label: 'Owners Menu:,
+highlight_label: 'Owners Menu',
 rows: [{
 title: 'Owners Fiturs', 
 id: '.ownermenu'
@@ -1567,7 +1567,7 @@ target = q.replace(/[^0-9]/g,'')+"@s.whatsapp.net"
 						}]
 					},
 					{
-						highlight_label: 🦅🇮🇩",
+						highlight_label: "🦅🇮🇩",
 						rows: [{
 							title: '🩸 ᗩη∂яσ2',
 							id: `andro ${target}`
@@ -1672,10 +1672,17 @@ Attacked Succes  : ${target}
  {
  "name": "single_select",
 "buttonParamsJson": JSON.stringify(listMessage)
+},   {
+ "name": "cta_url",
+ "buttonParamsJson": "{\"display_text\":\"Saluran Creator\",\"url\":\"https://whatsapp.com/channel/\",\"merchant_url\":\"https://whatsapp.com/channel/\"}"
 },
 {
  "name": "cta_url",
- "buttonParamsJson": "{\"display_text\":\"ՏᑕᖇIᑭT ՏIKᗰᗩ\",\"url\":\"https://wa.me/6281360773542\",\"merchant_url\":\"https://wa.me/6281360773542\"}"
+ "buttonParamsJson": "{\"display_text\":\"hh\",\"Not Sepuhh\":\"https://whatsapp.com/channel/0029Vali4LlLo4hjzszXME2O\",\"merchant_url\":\"\"}"
+},
+{
+ "name": "cta_url",
+ "buttonParamsJson": "{\"display_text\":\"Creators\",\"url\":\"https://wa.me/6281360773542\",\"merchant_url\":\"https://wa.me/6281360773542\"}"
  },
  ]
  })
@@ -1688,7 +1695,6 @@ await apiis.relayMessage(msg.key.remoteJid, msg.message, {
  messageId: msg.key.id
 })}
 break
-
 case 'spam-pairing': {
 if (!isCreator) return m.reply(' mlss kt gknl ')
 if (!text) return m.reply(`*Example:* ${prefix + command} +6288221325473|150`)
